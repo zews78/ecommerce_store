@@ -1,0 +1,75 @@
+{% extends 'app/base.html' %} {% load static %} {% block title %}Checkout{% endblock title %} {% block main-content %}
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-sm-6">
+            <h1 class="text-center"><strong>Order Summary</strong></h1>
+            <hr> {%for c in cartitem%}
+
+
+            <div class="card mb-2 border rounded shadow">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-3 text-center align-self-center border-end">
+                            <a href="/productdetail/{{c.product.id}}"><img src="{{c.product.image.url}}" alt="" srcset="" class="img-fluid img-thumbnail shadow-sm" height="150" width="150"> </a>
+                        </div>
+                        <div class="col-sm-9">
+                            <h5 class="fw-bold">Product: {{c.product.name}}</h5>
+                            <hr>
+                            <p class="fw-bold">Quantity: {{c.quantity}}</p>
+                            <hr>
+                            <p class="fw-bold">Price: {{c.totalcost}}</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <hr> {%endfor%}
+            <p class="fw-bold text-center">Total amount+ Delivery charges: {{totalamount}}</p>
+            <hr>
+            <small>Term and Condition: We support refunds only upto 15 days after the product is delivered</small>
+        </div>
+        <div class="col-sm-4 offset-sm-1">
+            <h1 class="text-center">
+                <strong>Select Shipping Address</strong></h1>
+            <hr>
+            <form action="/paymentdone">
+                {%if messages%} {%for m in messages%}
+                <p {%if m.tags%} class=" text-center alert alert-{{m.tags}} mb-5" {%endif%}>{{m}}</p>
+                {%endfor%} {%endif%} {%if not address%}
+                <div class="text-center btn">
+                    You haven't given us any Address. Please click on the button below to add one.
+                    <hr>
+                    <div class="text-center">
+                        <a href="/profile" class="btn btn-danger px-5 fw-bold">Add an Address</a>
+                    </div>
+                </div>
+                {%endif%} {%if address%}
+                <div class="text-center">
+                    <a href="/profile" class="btn btn-danger px-5 fw-bold">Add another Address</a>
+                </div>
+                {%endif%}
+                <hr>{%for a in address%}
+                <div class="form-check mt-2 mx-1">
+                    <input class="form-check-input" type="radio" name="custid" id="custadd{{forloop.counter}}" value="{{a.id}}">
+                    <label class="form-check-label fw-bold" for="custadd{{forloop.counter}}">
+    Address: {{forloop.counter}}</label>
+                </div>
+                <div class="card rounded border shadow">
+
+                    <div class="card-body">
+                        <h5>{{a.name}}</h5>
+                        <p>{{a.locality}}, {{a.city}}, {{a.state}}-{{a.zipcode}}.</p>
+                    </div>
+                </div>
+                <hr> {%endfor%} {%if address%}
+                <div class="text-center">
+                    <button type="submit" class="btn btn-warning mt-3 px-5 fw-bold">Continue</button>
+                </div>
+                {%endif%}
+            </form>
+            <br>
+        </div>
+    </div>
+</div>
+{% endblock main-content %}
