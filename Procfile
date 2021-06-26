@@ -1,1 +1,1 @@
-web: waitress-serve --port=8000 GameStore.wsgi:application
+web: waitress-serve --port=$POST GameStore.wsgi:application
