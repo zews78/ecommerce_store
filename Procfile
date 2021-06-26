@@ -1,1 +1,1 @@
-web: waitress-serve --port=$POST GameStore.wsgi:application
+web: waitress-serve --port=$PORT GameStore.wsgi:application
