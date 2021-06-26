@@ -1,1 +1,1 @@
-web: gunicorn GameStore.wsgi
+web: waitress-serve --port=$PORT GameStore.wsgi:application
