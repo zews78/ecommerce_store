@@ -42,5 +42,5 @@ urlpatterns = [
     path('paymentdone/', views.paymentdone, name='paymentdone'),
     path('search/', views.search, name='search'),
     path('productdetail/<int:pk>/addreview/', views.AddReviewView.as_view(), name='addreview'),
-]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
