@@ -121,4 +121,4 @@ To run this application
 [![License](https://img.shields.io/:License-MIT-blue.svg?style=flat-square)](http://badges.mit-license.org)
 
 - MIT License
-- Copyright 2021 © [Roneet Kumar Singh](https://github.com/roneetsingh)
+- Copyright 2021 ©
