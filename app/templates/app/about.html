@@ -1,0 +1,20 @@
+{% extends 'app/base.html' %} {% load static %} {% block title %}About{% endblock title %} {% block main-content %}
+
+
+<div class="col-sm-6 text-center offset-sm-3 border shadow rounded p-3 my-5">
+    <img src="{% static 'app/images/banner/gs.png' %}" class="d-block w-100" height="" alt="">
+    <hr>
+
+    <h4>Greetings! Fellow Travellers. This is a little application I made, a project if you will, using Django. With a tad bit of HTML, ofcourse. But let's skip the boring stuff. Please hit the button below to head to Homepage. Thank you!</h3>
+
+
+
+        <hr>
+        <div class="py-2">
+            <a href="{% url 'home' %}" class="text-center btn btn-danger shadow">Home</a>
+        </div>
+
+        <b class="text-black">Copyright &copy; 2021 | Designed by Roneet Kumar Singh</b>
+</div>
+
+{% endblock main-content %}
