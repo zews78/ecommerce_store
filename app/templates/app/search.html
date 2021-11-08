@@ -1,0 +1,37 @@
+{% extends 'app/base.html' %} {% load static %} {% block title %}Search for "{{searched}}"{% endblock title %}{% block main-content %}
+
+
+<div class="col-sm-8 text-center offset-sm-2 border shadow rounded p-3 my-5">
+    {%if searched%}
+    <strong>You searched for "{{searched}}".</strong> {%if not names%} <strong>Sorry, we found nothing relating to "{{searched}}"</strong> {%endif%} {%if names%}
+    <hr>{%endif%}
+    <div class="row mx-auto">
+        {% for n in names %}
+
+        <div class="card mx-auto mb-5 border shadow" style="width: 18rem;">
+            <a href="{% url 'productdetail' n.id%}">
+                <img src={{n.image.url}} class="card-img-top" alt="...">
+                <div class="card-body">
+
+            </a>
+
+            </div>
+            <ul class="list-group list-group-flush">
+
+                <li class="list-group-item"><b>{{n.name}}</b></li>
+                <li style="text-align: center;" class="list-group-item">Genre: {{n.genre}}</li>
+                <li style="text-align: center;" class="list-group-item">₹{{n.selling_price}}</li>
+
+            </ul>
+
+
+        </div>
+
+
+
+        {% endfor %}
+    </div>
+</div>
+{%else%}<strong>Please enter the name of a game, we could search our inventory for.</strong> {%endif%}
+</div>
+{% endblock main-content %}
