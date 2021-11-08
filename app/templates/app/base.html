@@ -17,7 +17,7 @@
 
     <!--Custom CSS-->
     <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
-
+    <link rel="shortcut icon" type="image/jpg" href="{% static 'app/images/gamingicon.png' %}"/>
 
     <title>GameStore | {% block title %} {% endblock title %} </title>
 </head>
@@ -126,7 +126,7 @@
     </nav>
     {% block banner_slider %} {% endblock banner_slider %}
     <!--{% block livesale %} {% endblock livesale %}-->{% block main-content %} {% endblock main-content %}
-
+    {% block payment-gateway %} {% endblock payment-gateway %}
     <!-- Start Footer -->
 
     <!--<footer class="container-fluid text-center p-2 mt-5" style="font-family:verdana; background-color: #777777;">
