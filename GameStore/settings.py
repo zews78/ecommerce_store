@@ -13,6 +13,10 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 188199b0c779bce844f35f319a00cb288a8c15eb
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -21,12 +25,21 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+<<<<<<< HEAD
 SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
 ALLOWED_HOSTS = ["gamestoredj.herokuapp.com", "localhost"]
+=======
+SECRET_KEY = "This is my secret key"
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+
+ALLOWED_HOSTS = ["gamestoredj.herokuapp.com", "*"]
+>>>>>>> 188199b0c779bce844f35f319a00cb288a8c15eb
 
 
 # Application definition
@@ -122,6 +135,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT=BASE_DIR/ 'static'
+<<<<<<< HEAD
+=======
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+>>>>>>> 188199b0c779bce844f35f319a00cb288a8c15eb
 MEDIA_URL = '/media/'
 MEDIA_ROOT =BASE_DIR/'media'
 LOGIN_REDIRECT_URL='/'
@@ -132,3 +150,8 @@ SESSION_ENGINE="django.contrib.sessions.backends.db"
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 188199b0c779bce844f35f319a00cb288a8c15eb

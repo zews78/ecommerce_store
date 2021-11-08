@@ -1,0 +1,19 @@
+{% extends 'app/base.html' %} {% load static %} {% block title %}404{% endblock title %} {% block main-content %}
+
+
+<div class="col-sm-6 text-center offset-sm-3 border shadow rounded p-3 my-5">
+    <hr>
+
+    <h4>Uh-oh! Page not found!</h3>
+
+
+
+        <hr>
+        <div class="py-2">
+            <a href="{% url 'home' %}" class="text-center btn btn-danger shadow">Home</a>
+        </div>
+
+        <b class="text-black">Copyright &copy; 2021 | Designed by Sigma Team</b>
+</div>
+
+{% endblock main-content %}

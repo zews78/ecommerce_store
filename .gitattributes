@@ -1,1 +1,6 @@
+<<<<<<< HEAD
 *.html linguist-vendored
+=======
+app/templates/* linguist-vendored
+app/static/* linguist-vendored
+>>>>>>> 188199b0c779bce844f35f319a00cb288a8c15eb

@@ -312,4 +312,9 @@ class AddReviewView(CreateView):
         form.instance.product_id=self.kwargs['pk']
         return super().form_valid(form)
     def get_success_url(self):
+<<<<<<< HEAD
         return reverse_lazy('productdetail', kwargs={'pk': self.kwargs['pk']})
+=======
+        return reverse_lazy('productdetail', kwargs={'pk': self.kwargs['pk']})
+
+>>>>>>> 188199b0c779bce844f35f319a00cb288a8c15eb
